@@ -108,17 +108,14 @@ wait_time = 0.05
 [node name="Choices Dialog" type="PanelContainer" parent="Story Screen"]
 visible = false
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -543.0
-offset_top = 60.0
-offset_right = 544.0
-offset_bottom = 145.0
+offset_left = -543.5
+offset_top = 420.0
+offset_right = 543.5
+offset_bottom = 505.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("4_um3na")
 
 [node name="MarginContainer" type="MarginContainer" parent="Story Screen/Choices Dialog"]

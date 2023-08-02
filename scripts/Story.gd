@@ -33,6 +33,9 @@ func narrate(beat):
 
 
 func _on_advance_beat():
+	if (current_beat.jumpToNode != ""):
+		jumpToNode(current_beat.jumpToNode)
+				
 	if (current_beat.get_child_count() == 0):
 		END_OF_STORY.emit()
 	else:

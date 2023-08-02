@@ -7,19 +7,26 @@ script = ExtResource("1_go77m")
 text = "You are standing in an open field west of a white house, with a boarded front door.
 
 There is a mailbox here."
-choices = Array[String](["Open the mailbox.", "Screw this, I'm going home."])
+choices = Array[String](["Open the mailbox.", "Knock on the front door.", "Screw this, I'm going home."])
 
 [node name="Open Mailbox" type="Node" parent="."]
 script = ExtResource("1_go77m")
 text = "You open the mailbox.  Inside is a pile of junk mail from a different game entirely."
 
-[node name="Go inside" type="Node" parent="Open Mailbox"]
+[node name="Go around back" type="Node" parent="Open Mailbox"]
 script = ExtResource("1_go77m")
 text = "You're briefly tempted to read it, but you remember that this is a game about finding treasure under the house.  You close the mailbox and go around back.
 
 There is a sign on the door that says \"Go away\", so you do.
 
 THE END"
+
+[node name="Knock" type="Node" parent="."]
+script = ExtResource("1_go77m")
+text = "You knock on the front door.
+
+There's nobody home."
+jumpToNode = "."
 
 [node name="Go Home" type="Node" parent="."]
 script = ExtResource("1_go77m")
