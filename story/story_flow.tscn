@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct6362a458c6s"]
+
+[ext_resource type="Script" path="res://scripts/StoryNode.gd" id="1_go77m"]
+
+[node name="Start the Story" type="Node"]
+script = ExtResource("1_go77m")
+text = "You are standing in an open field west of a white house, with a boarded front door.
+
+There is a mailbox here."
+choices = Array[String](["Open the mailbox.", "Screw this, I'm going home."])
+
+[node name="Open Mailbox" type="Node" parent="."]
+script = ExtResource("1_go77m")
+text = "You open the mailbox.  Inside is a pile of junk mail from a different game entirely."
+
+[node name="Go inside" type="Node" parent="Open Mailbox"]
+script = ExtResource("1_go77m")
+text = "You're briefly tempted to read it, but you remember that this is a game about finding treasure under the house.  You close the mailbox and go around back.
+
+There is a sign on the door that says \"Go away\", so you do.
+
+THE END"
+
+[node name="Go Home" type="Node" parent="."]
+script = ExtResource("1_go77m")
+text = "\"Screw this,\" you think to yourself.  \"I have better things to do with my time.\"
+
+You go home, bringing your adventure to a premature end.
+
+THE END"
