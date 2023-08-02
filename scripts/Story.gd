@@ -35,18 +35,18 @@ func narrate(beat):
 func _on_advance_beat():
 	if (current_beat.jumpToNode != ""):
 		jumpToNode(current_beat.jumpToNode)
-				
-	if (current_beat.get_child_count() == 0):
-		END_OF_STORY.emit()
-	else:
-		if (current_beat.choices.size() > 0):
-			narration_dialog.get_node("MarginContainer/VBoxContainer/Advance Button").visible = false
-			choices_dialog.visible = true
-			choices_dialog.choices = current_beat.choices
+	else:			
+		if (current_beat.get_child_count() == 0):
+			END_OF_STORY.emit()
 		else:
-			choices_dialog.visible = false
-			current_beat = current_beat.get_child(0)
-			narrate(current_beat)
+			if (current_beat.choices.size() > 0):
+				narration_dialog.get_node("MarginContainer/VBoxContainer/Advance Button").visible = false
+				choices_dialog.visible = true
+				choices_dialog.choices = current_beat.choices
+			else:
+				choices_dialog.visible = false
+				current_beat = current_beat.get_child(0)
+				narrate(current_beat)
 
 
 func _on_choice_selected(index):
